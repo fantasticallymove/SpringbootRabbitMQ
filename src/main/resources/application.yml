@@ -1,0 +1,30 @@
+spring:
+    application:
+        name: schedule
+    datasource:
+        hikari:
+            auto-commit: true
+            connection-timeout: 30000
+            driver-class-name: org.mariadb.jdbc.Driver
+            max-lifetime: 0
+            maximum-pool-size: 100
+            minimum-idle: 10
+            idle-timeout: 600000
+        password:
+        url: jdbc:mariadb://localhost:3306/employee
+        username: root
+    jpa:
+        open-in-view: true
+        properties:
+            hibernate:
+                format_sql: true
+        show-sql: false
+    rabbitmq:
+        listener:
+            simple:
+                prefetch: 10
+                auto-startup: true
+server:
+    port: 8080
+cron:
+    expression: '0/5 * * * * *'

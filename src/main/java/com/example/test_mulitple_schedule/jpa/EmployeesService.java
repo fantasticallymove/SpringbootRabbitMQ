@@ -27,4 +27,11 @@ public class EmployeesService {
 
         repository.saveAll(list);
     }
+
+    public void save(String name){
+        Employee employee = new Employee();
+        employee.setName(name);
+        employee.setAge(32);
+        repository.save(employee);
+    }
 }
